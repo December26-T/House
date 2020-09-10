@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <properties resource="database.properties"/>
+
+    <!--为实体类起别名-->
+
+    <!-- 配置类型别名 -->
+    <typeAliases>
+        <package name="com.github.pojo"/>
+    </typeAliases>
+
+    <!--配置数据源-->
+    <environments default="development"><!--配置多个运行环境-->
+        <environment id="development">
+            <!--mysql交给jdbc来进行管理-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--使用mybatis默认的数据源-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"></property>
+                <property name="url" value="${url}"></property>
+                <property name="username" value="${user}"></property>
+                <property name="password" value="${password}"></property>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--读取资源文件-->
+    <mappers>
+        <package name="com.github.dao"></package>
+    </mappers>
+</configuration>
