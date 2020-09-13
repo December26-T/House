@@ -7,15 +7,7 @@ import java.io.Serializable;
  */
 public class HosType implements Serializable {
     private Integer hTID;//房屋类型编号
-    private String hName;//房屋类型名称
-
-    public HosType() {
-    }
-
-    public HosType(Integer hTID, String hName) {
-        this.hTID = hTID;
-        this.hName = hName;
-    }
+    private String hTName;//房屋类型名称
 
     public Integer gethTID() {
         return hTID;
@@ -25,11 +17,19 @@ public class HosType implements Serializable {
         this.hTID = hTID;
     }
 
-    public String gethName() {
-        return hName;
+    public String gethTName() {
+        return hTName;
     }
 
-    public void sethName(String hName) {
-        this.hName = hName;
+    public void sethTName(String hTName) {
+        this.hTName = hTName;
+    }
+
+    public HosType(Integer hTID, String hTName) {
+        this.hTID = hTID;
+        this.hTName = hTName;
+    }
+    public HosType() {
+
     }
 }
